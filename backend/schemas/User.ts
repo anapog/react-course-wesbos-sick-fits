@@ -13,7 +13,8 @@ export const User = list({
 				createView: { fieldMode: "hidden" },
 				itemView: { fieldMode: "read" }
 			}
-		})
-		// TODO include roles and orders
+		}),
+		orders: relationship({ ref: 'Order.user', many: true }),
+		// TODO include roles
 	}
 })
