@@ -64,4 +64,15 @@ export const rules = {
 
     return { order: { user: { id: session.itemId } } };
   },
+  canManageUsers({ session }: ListAccessArgs) {
+    if (!isSignedin({ session })) {
+      return false;
+    }
+
+    if (permissions.canManageUsers({ session })) {
+      return true;
+    }
+
+    return { id: session.itemId };
+  },
 }
