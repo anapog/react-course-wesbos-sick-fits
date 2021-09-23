@@ -74,7 +74,7 @@ function CheckoutForm() {
 
     // Change page after payment
     router.push({
-      pathname: '/orders',
+      pathname: '/order/[id]',
       query: { id: order.data.checkout.id },
     });
     closeCart();
